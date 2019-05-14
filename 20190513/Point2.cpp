@@ -31,9 +31,16 @@ public:
     }
     void print()
     {
-        cout << "(" << _ix
+            cout << "(" << _ix
              << "," << _iy
              << ")" << endl;
+    }
+
+    Point (const Point & rhs)
+    : _ix(rhs._ix)
+    , _iy(rhs._iy)
+    {
+        cout << "Point(const Point & rhs)" << endl;
     }
 private:
     int _ix;
@@ -46,13 +53,18 @@ int test0(void)
     int b = a;
     cout << "a = " << a << endl
          << "b = " << b << endl;
+    Point pt1(1, 2);
+    Point pt2 = pt1;
+    
+    return 0;
 }
 int main(void)
 {
-    Point pt;
-    pt.print();
+    // Point pt;
+    //pt.print();
+    //Point  pt1(10, 20);
+    //pt1.print();
     
-    Point  pt1(10, 20);
-    pt1.print(); 
+    test0();
     return 0;
 }
